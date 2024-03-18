@@ -1,0 +1,332 @@
+@font-face {
+    font-family: "ZonaPro";
+    src: url(/public/assets/fonts/Zona/zona-pro-bold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "ZonaPro";
+    src: url(public/assets/fonts/Zona/zona-pro-light.otf);
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "ZonaPro";
+    src: url(public/assets/fonts/Zona/zona-pro-medium.otf);
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: "ZonaPro";
+    src: url(public/assets/fonts/Zona/zona-pro-regular.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "ZonaPro";
+    src: url(assets/fonts/Zona/zona-pro-semibold.otf);
+    font-weight: semibold;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    
+    --primary-red: #9a2020;
+    --primary-black: #141414;
+    --secondary-black: #1e1e1e;
+    --secondary-red: #d82216;
+    background-color: #e8eaed;
+}
+
+body {
+    font-family: "ZonaPro",Arial, sans-serif;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.driver-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2.4rem;
+}
+
+.driver-user, .driver-user-BIG {
+    width: 90%;
+    height: 10rem;
+    background: #1e1e1e;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.4rem;
+    border-radius: 2.2rem;
+    gap: 1.2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.driver-user-BIG.expanded{
+    width: 90%;
+    height: auto;
+    background: rgb(120,24,24);
+    background: linear-gradient(90deg, rgba(120,24,24,1) 0%, rgba(149,30,30,1) 100%);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.4rem;
+    border-radius: 2.2rem;
+    gap: 1.2rem;
+    position: relative;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.shot-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.2rem;
+    &.order-id{
+        color: #f8f9fa;
+    }
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.driver-detail-expanded{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.driver-user-BIG .driver-detail-expanded {
+    display: none;
+}
+
+.driver-user-BIG.expanded .driver-detail-expanded {
+
+    display: block;
+}
+
+/*******************/
+
+
+/* .shot-info:not(.expanded) {
+    width: 100%;
+    height: 10rem;
+    background: #1e1e1e;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.4rem;
+    border-radius: 2.2rem;
+    gap: 7.3rem;
+    position: relative;
+} */
+
+.shot-info.expanded {
+    width: 100%;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2.2rem;
+}
+
+.shot-info.expanded .status-of-user a{
+    color: black;
+    background-color: white;
+}
+
+.driver-user-BIG.expanded .time{
+    position: absolute;
+    bottom: 1rem;
+    right: 2.4rem;
+    max-height: 1000px;
+}
+
+.panel {
+    display: none;
+    overflow: hidden;
+    width: 35rem;
+    z-index: 100;
+}
+
+.panel.is-expanded {
+    display: contents;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    left: 80px; /* Adjust this value to set the left padding */
+    width: calc(100% - 80px); /* Adjust this value to set the width */
+    height: 100%;
+}
+
+.search_filed{
+    position: relative;
+    top: 2.4rem;
+    left: 75rem;
+    z-index: 9999;
+}
+
+.form-control{
+    padding: 1.2rem;
+    border-radius: 5rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: "ZonaPro", Arial, sans-serif;
+}
+
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.container{
+    display: inline-flex;
+    column-gap: 1.2rem;
+}
+
+.btn{
+    padding: 1.2rem;
+    border-radius: 100rem;
+    border: none;
+    font-family: "ZonaPro", Arial, sans-serif;
+    font-weight: 300;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-Direction{
+    background-color: cornflowerblue;
+}
+
+.btn-short{
+    background-color: #57a808;
+}
+
+.feedback_button {
+    position: fixed;
+    top: 1rem;
+    right: 6.4rem;
+    z-index: 9999;
+}
+
+.feedback_button button {
+    background-color: #f10e1b; /* Yellow color */
+    color: #e5e3df;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Hide the popup by default */
+    flex-direction: column;
+    column-gap: 2.4rem;
+}
+
+.info_user {
+    display: flex;
+    justify-content: space-between; /* Align items at the start of the container */
+    align-items: center; /* Align items vertically */
+    column-gap: 1.2rem;
+}
+
+.locationCoordinate{
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #101010;
+    height: 4.8rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1.2rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+}
+.user_profile_pic{
+    width: 8.2rem;
+    height: 8.2rem;
+    border-radius: 50%;
+    margin-right: 1.8rem;
+    
+}
+
+.username_text{
+    /*padding: 1.8rem;*/
+    border-radius: 50rem;
+    outline: none;
+    border: none;
+    font-family: "ZonaPro", Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.INFO{
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+}
+
+.feedback_description {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+
+.textarea-feedback{
+    width: 100%;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    font-family: "ZonaPro", Arial, sans-serif;
+    border-radius: 1.2rem;
+}
+
+.feedback_buttons {
+    display: flex;
+    justify-content: space-between; /* Arrange buttons with space between */
+}
+
+.feedback_buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedback_buttons #submitFeedback {
+    background-color: #f10e1b;
+    color: #e5e3df;
+}
+
+.feedback_buttons #getCordinate {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.GeneratedID{
+    font-size: 1.4rem;
+}
+/* Remaining styles remain the same */

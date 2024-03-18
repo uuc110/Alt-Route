@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>RouteSync</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet"/>
+    <link href="main.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,1,200"
+          rel="stylesheet"/>
+</head>
+<body>
+<nav class="sidebar" style="z-index: 100;">
+    <header>
+        <div class="logo-text">
+            <span class="main-logo">
+                <img alt="#" class="brand-logo" src="assets/icons/thunder-svgrepo-com.svg">
+            </span>
+        </div>
+    </header>
+
+    <div class="side-navbar">
+        <div class="side-navbar_links">
+            <a href="#"><span class="material-symbols-rounded">home_app_logo</span></a>
+            <a href="#"><span class="material-symbols-rounded">conversion_path</span></a>
+            <a href="#"><span class="material-symbols-rounded">mail</span></a>
+            <a href="#"><span class="material-symbols-rounded">deployed_code</span></a>
+            <a href="#"><span class="material-symbols-rounded">badge</span></a>
+        </div>
+
+        <div class="side-navbar_setting-links">
+            <div class="setting-icons">
+                <a href="#"><span class="material-symbols-rounded">mark_chat_unread</span></a>
+                <a href="#"><span class="material-symbols-rounded">settings</span></a>
+            </div>
+            <div class="profile-container" role="img">
+                <span><img alt="" class="profileUser" src="assets/icons/profile-pic.png"></span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="panel" style="z-index: 100;">
+    <div class="route-panel">
+        <div class="heading">
+            <span>Delivery Tracking</span>
+        </div>
+        <div class="driver-details">
+            <div class="driver-user" id="collasped">
+                <div class="driver-box">
+                    <span class="location">Package from Warsaw</span>
+                    <span class="order-id">Order ID #14398-91751</span>
+                </div>
+                <div class="status-of-user">
+                    <a href="#">on the way</a>
+                </div>
+                <span class="time">17:45 AM, Tuesday</span>
+            </div>
+
+            <div class="driver-user-BIG">
+                <div class="shot-info">
+                    <div class="driver-box">
+                        <span class="location">Package from Warsaw</span>
+                        <span class="order-id">Order ID #14398-91751</span>
+                    </div>
+                    <div class="status-of-user">
+                        <a href="#">on the way</a>
+                    </div>
+                    <span class="time">17:45 AM, Tuesday</span>
+                </div>
+                <div class="driver-detail-expanded">
+                    <div class="progress">
+                        <span class="prog-num">81%</span>
+                        <div class="progress-bar">
+                            <div class="progress-length" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="user-pro-detail">
+                        <div class="flex-in customer-name">Customer<span>Castorama</span></div>
+                        <div class="flex-in weight">Weight <span>2.8kg</span></div>
+                        <div class="flex-in price">Price <span>$480</span></div>
+                        <div class="flex-in departure">Departure <span>22 July</span></div>
+                    </div>
+                    <div class="user-info-2">
+                        <img alt="#" class="driver-pic" src="assets/image/hannah.jpg">
+                        <div class="driver_name-info">
+                            <p class="user-name">Adam Brady</p>
+                            <span>Driver</span>
+                        </div>
+                        <div class="user-contact">
+                            <a href="mailto:uuc110@gmail.com"><span
+                                    class="material-symbols-outlined chat">chat</span></a>
+                            <a href="tel:7775866495"><span class="material-symbols-outlined call">call</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tracking-card" style="z-index: 100;">
+        <div class="tracking-header">
+            <span class="order-id">Order ID #14398-91751</span>
+            <span class="status on-the-way">on the way</span>
+        </div>
+        <div class="tracking-details">
+            <div class="detail">
+                <span class="label">From</span>
+                <span class="value">Warsaw, PL</span>
+            </div>
+            <div class="detail">
+                <span class="label">To</span>
+                <span class="value">Berlin, DE</span>
+            </div>
+            <div class="detail">
+                <span class="label">Current Location</span>
+                <span class="value">Dresden, DE</span>
+            </div>
+            <div class="detail">
+                <span class="label">Kms Left</span>
+                <span class="value">620</span>
+            </div>
+            <div class="detail">
+                <span class="label">Last Stop</span>
+                <span class="value">3 hours</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="deployed-code-panel" style="display: none;">
+
+</div>
+
+<div class="search_filed container">
+    <div class="container">
+        <div class="form-group">
+            <input class="form-control" id="source" placeholder="Source location" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="dest" placeholder="Destination location" type="text">
+        </div>
+        <button class="btn btn-Direction" onclick="calcRoute()">Get Direction</button>
+        <button class="btn btn-short" onclick="plotShortestPath()">Shortest Path</button>
+    </div>
+</div>
+
+<div class="feedback_button">
+    <button id="feedbackButton">?</button>
+</div>
+
+<div class="feedback" id="feedbackPopup">
+    <div class="info_user">
+        <div class="INFO">
+            <div>
+                <img alt="#" class="user_profile_pic" src="./assets/image/hannah.jpg">
+            </div>
+            <div>
+                <input class="username_text" id="username" name="username" placeholder="Enter your username"
+                       type="text">
+            </div>
+        </div>
+        <div class="ID-user">
+            <span class="GeneratedID">UID-ABC987X</span>
+        </div>
+    </div>
+    <div class="feedback_description">
+        <p>Please provide your feedback:</p>
+
+    </div>
+    <div class="textfeedback">
+        <textarea class="textarea-feedback" cols="30" id="feedback-text" name="feedback" rows="10"></textarea>
+        <div class="loaded-cordinate">
+            <p class="locationCoordinate"></p>
+        </div>
+    </div>
+    <div class="feedback_buttons">
+        <button id="submitFeedback">Submit</button>
+        <button id="getCordinate">Get Coordinates from Map</button>
+    </div>
+</div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=[API_KEy_HERE]&libraries=places"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="MainComponentAnimation.js"></script>
+<div id="map"></div>
+<script src="map.js">
+</script>
+</body>
+</html>
+
+
