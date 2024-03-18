@@ -17,8 +17,7 @@ The problem statement for this hackathon project was to create a solution that c
 
 - **Front-end**: HTML, CSS, JavaScript
 - **Back-end**: (If applicable, mention the server-side technologies used)
-- **APIs**: Google Maps API, (any other relevant APIs)
-- **Libraries**: (List any notable libraries or frameworks used)
+- **APIs**: Google Maps API
 
 ## Getting Started
 
@@ -29,15 +28,3 @@ To run the AltRoute application locally, follow these steps:
 3. Open the `index.html` file in a web browser.
 
 Note: You may need to obtain API keys for certain services (e.g., Google Maps) and configure them in the project files.
-
-## Contributing
-
-Contributions to AltRoute are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. Make sure to follow the contributing guidelines outlined in the repository.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-We would like to express our gratitude to the hackathon organizers and all the participants who contributed to the development of this project. Special thanks to the mentors and subject matter experts who provided valuable guidance and insights throughout the hackathon.
