@@ -43,6 +43,41 @@
     </div>
 </nav>
 
+<script>
+    // Get the profile container element
+    const profileContainer = document.querySelector('.profile-container');
+
+    // Add an event listener for the click event on the profile container
+    profileContainer.addEventListener('click', () => {
+        // Get the current login status
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+        // If the user is logged in, log them out
+        if (isLoggedIn) {
+            localStorage.removeItem('isLoggedIn');
+            window.location.reload();
+        } 
+        // If the user is not logged in, log them in
+        else {
+            // Get the username and password from the login form
+            const username = document.querySelector('#username').value;
+            const password = document.querySelector('#password').value;
+
+            // Check if the username and password are correct
+            if (username === 'admin' && password === 'password') {
+                // Set the isLoggedIn flag in local storage
+                localStorage.setItem('isLoggedIn', true);
+
+                // Reload the page to update the UI
+                window.location.reload();
+            } else {
+                // Display an error message
+                alert('Invalid username or password');
+            }
+        }
+    });
+</script>
+
 <div class="panel" style="z-index: 100;">
     <div class="route-panel">
         <div class="heading">
