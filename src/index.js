@@ -4,11 +4,9 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 const { Student, /* Driver */ } = require('./config');
 const { log } = require('console');
- 
+
 
 const app = express();
-
-app.use(express.urlencoded({ extended: true }));
 // static file like css
 app.use(express.static("public"))
 
@@ -28,30 +26,30 @@ app.get('/login', (req, res) => {
 
 
 app.get('/signup', (req, res) => {
-    res.render('Signup')
+    res.render('Signup');
 });
 
 // Register a new student
 
-// app.post('/signup', async (req, res) => {
+// app.post('/drivers', async (req, res) => {
 //     try {
-//         console.log(req.body);
-//       const driver = new Driver(req.body);
-//       const savedDriver = await driver.save();
-//       res.redirect('/home');
+//         const driver = new Driver(req.body); // Create a new Driver instance with the request body
+//         const savedDriver = await driver.save(); // Save the driver to the database
+//         res.status(201).json(savedDriver); // Respond with the saved driver
 //     } catch (error) {
-//       res.status(400).json({ message: error.message });
+//         res.status(400).json({ message: error.message });
 //     }
+//     res.redirect('/home');
 // });
 
 app.post('/signup', async (req, res) => {
     try {
-        console.log(req.body);
-      const student = new Student(req.body);
-      const savedStudent = await student.save();
-      res.redirect('/home');
+        console.log(req.body)
+        const student = new Student(req.body);
+        const savedStudent = await student.save();
+        res.redirect('/home');
     } catch (error) {
-      res.status(400).json({ message: error.message });
+        res.status(400).json({ message: error.message });
     }
 });
 

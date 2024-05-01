@@ -6,22 +6,22 @@ var next_click = document.querySelectorAll(".next_button");
 var main_form = document.querySelectorAll(".main");
 var step_list = document.querySelectorAll(".progress-bar li");
 var num = document.querySelector(".step-number");
-const currentuser = document.querySelector('.CurrentUser');
+const Studentcurrentuser = document.querySelector('.CurrentUser');
+const Drivercurrentuser = document.querySelector('.DriverUser');
 
-const usertypeValue = localStorage.getItem('userType'); // Retrieve the value from local storage
-console.log(usertypeValue);
+const usertypeValue = localStorage.getItem('userType');
+
 let formnumber = 0;
-// let isStudent = usertypeValue === 'student' ? true : false; // Use the retrieved value
-let isStudent = true; // Use the retrieved value
+
+let isStudent = usertypeValue === 'student' ? true : false; // Use the retrieved value
 
 if (usertypeValue === 'student') {
-    currentuser.style.display = 'block';
-    currentuser.classList.add('student-i');
+    Studentcurrentuser.style.display = 'block';
+    Studentcurrentuser.classList.add('student-i');
+} else {
+    Drivercurrentuser.style.display = 'block';
+    Drivercurrentuser.classList.add('driver-i');
 }
-// else {
-//     currentuser.style.display = 'block';
-//     currentuser.classList.add('driver-i');
-// }
 
 // Function to show/hide driver fields
 function toggleDriverFields(show) {

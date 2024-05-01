@@ -88,7 +88,7 @@ input[type="email"] {
 
 
 
-.CurrentUser{
+.CurrentUser, .DriverUser{
     background-color: #122436;
     color: #fff;
     padding: 0.5rem 1rem;
@@ -103,7 +103,7 @@ input[type="email"] {
     color: gold;
 }
 
-.CurrentUser.driver-i::before {
+.DriverUser.driver-i::before {
     content: "Driver";
     color: gold;
 }
