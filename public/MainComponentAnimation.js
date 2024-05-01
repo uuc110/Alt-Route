@@ -1,3 +1,5 @@
+const profileContainer = document.querySelector('.profileUser');
+
 document.addEventListener('DOMContentLoaded', function() {
     const panel = document.querySelector('.panel');
     const mapIcon = document.querySelector('.side-navbar_links a:nth-child(2)'); // Adjust the nth-child index if the map/route icon is in a different position
@@ -95,4 +97,9 @@ window.addEventListener('click', function(event) {
     if (event.target === feedbackPopup) {
         feedbackPopup.style.display = 'none';
     }
+});
+
+profileContainer.addEventListener('click', () => {
+    // Redirect to the login page
+    window.location.href = 'LoginSystem/Signup.html';
 });

@@ -1,0 +1,20 @@
+{
+  "name": "alt-route",
+  "version": "1.0.0",
+  "description": "AltRoute is a web application developed during a hackathon to address the challenge of finding safer routes that are not typically shown on Google Maps. The idea behind this project is to provide an alternative routing system that considers factors such as time of day and potential risks, offering routes that may be safer than the ones suggested by traditional navigation apps.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.3",
+    "node-geocoder": "^4.3.0",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  }
+}

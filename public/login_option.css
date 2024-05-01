@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /*font-size: 10px;*/
+    /*10px /16px = 0.625 = 62.5%*/
+    /*Percentage of user's browser font-size setting*/
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cascadia Code", "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: white;
+}
+
+.container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 25rem;
+}
+
+.selectionPage {
+    background-color: #a11919;
+    height: auto;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    row-gap: 1.2rem;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2.0rem;
+}
+
+.sectionTitle {
+    font-size: 4.8rem;
+    margin: 3.2rem 0 5.2rem;
+}
+
+.options {
+    display: flex;
+    column-gap: 2.8rem;
+    padding-bottom: 4.2rem;
+}
+
+.options .option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.2rem;
+}
+
+.selectionPage img {
+    height: 18rem;
+    border: 1px solid black;
+    padding: 2.4rem;
+    border-radius: 1.2rem;
+}
+
+.option span {
+    font-size: 2.4rem;
+}
+
+
+
+
+
+
+

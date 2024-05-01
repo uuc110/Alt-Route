@@ -1,15 +1,5 @@
-var userLocation = {
-    lat:22.728050000000003,
-    lng:75.80407000000001
-}
-
-var driverCoordinates = {
-    lat:22.7288683,
-    lng:75.8069523
-}
-
-var radius = 500;
-
+'use strict'
+console.log("map js")
 
 var map;
 var directionsService;
@@ -28,7 +18,7 @@ function initMap() {
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: pos,
-            zoom: 13
+            zoom: 20
         });
     });
 
@@ -40,7 +30,7 @@ function initMap() {
     var sourceAutocomplete = new google.maps.places.Autocomplete(sourceInput);
     var destAutocomplete = new google.maps.places.Autocomplete(destInput);
 
-    google.maps.event.addListener(sourceAutocomplete, 'place_changed', function () {
+    google.maps.event.addListener(sourceAutocomplete, 'place_changed', function() {
         var place = sourceAutocomplete.getPlace();
         if (!place.geometry) {
             window.alert("No details available for input: '" + place.name + "'");
@@ -48,7 +38,7 @@ function initMap() {
         }
     });
 
-    google.maps.event.addListener(destAutocomplete, 'place_changed', function () {
+    google.maps.event.addListener(destAutocomplete, 'place_changed', function() {
         var place = destAutocomplete.getPlace();
         if (!place.geometry) {
             window.alert("No details available for input: '" + place.name + "'");
@@ -57,25 +47,42 @@ function initMap() {
     });
 }
 
+
+
 function calcRoute() {
     var source = document.getElementById('source').value;
-    // console.log()
     var dest = document.getElementById('dest').value;
-    // console.log(dest)
 
     var request = {
-        origin: { lat:22.728050000000003,
-            lng:75.80407000000001},
+        origin: source,
         destination: dest,
         travelMode: 'DRIVING',
         provideRouteAlternatives: true
     };
 
-    directionsService.route(request, function (result, status) {
+    directionsService.route(request, function(result, status) {
         if (status == 'OK') {
-            directionsRenderer.setDirections({routes: []});
+            directionsRenderer.setDirections({ routes: [] });
 
-            result.routes.sort(function (a, b) {
+            // Calculate the distance between source and destination
+            var sourceLatLng = result.routes[0].legs[0].start_location;
+            var destLatLng = result.routes[0].legs[0].end_location;
+            var distance = google.maps.geometry.spherical.computeDistanceBetween(sourceLatLng, destLatLng);
+
+            if (distance <= 500) {
+                // Check if the browser supports notifications
+                if ("Notification" in window) {
+                    // Request permission to display notifications
+                    Notification.requestPermission().then(function (permission) {
+                        // If the user grants permission, create and display the notification
+                        if (permission === "granted") {
+                            var notification = new Notification("Destination is within 500 meters of the source!");
+                        }
+                    });
+                }
+            }
+
+            result.routes.sort(function(a, b) {
                 return a.legs[0].distance.value - b.legs[0].distance.value;
             });
 
@@ -99,8 +106,7 @@ function calcRoute() {
                 var path = result.routes[i].overview_path;
                 var coords = [];
                 for (var j = 0; j < path.length; j++) {
-                    coords.push({lat: path[j].lat(), lng: path[j].lng()});
-                    console.log({lat: path[j].lat(), lng: path[j].lng()})
+                    coords.push({ lat: path[j].lat(), lng: path[j].lng() });
                 }
                 routeCoordinates.push(coords);
 
@@ -111,11 +117,6 @@ function calcRoute() {
                         }
                     });
                 }
-
-                // Check if any point in the route is within 500 meters of the user's location
-                if (isWithinRadius(coords, userLocation, 500)) {
-                    alert('Driver is within 500 meters of your location!');
-                }
             }
 
             console.log(routeCoordinates);
@@ -123,30 +124,6 @@ function calcRoute() {
             window.alert('Directions request failed due to ' + status);
         }
     });
-    
-}
-
-function checkWithinRadius() {
-    if (isWithinRadius(driverCoordinates, userLocation, radius)) {
-        alert('Driver is within ' + radius + ' meters of your location!');
-    } else {
-        alert('Driver is not within ' + radius + ' meters of your location.');
-    }
-}
-
-function isWithinRadius(coordinates, userLocation, radius) {
-    for (var i = 0; i < coordinates.length; i++) {
-        var distance = google.maps.geometry.spherical.computeDistanceBetween(
-            new google.maps.LatLng(coordinates[i].lat, coordinates[i].lng),
-            new google.maps.LatLng(userLocation.lat, userLocation.lng)
-        );
-
-        if (distance <= radius) {
-            return true;
-        }
-    }
-
-    return false;
 }
 
 
@@ -161,9 +138,9 @@ function plotShortestPath() {
         travelMode: 'DRIVING'
     };
 
-    directionsService.route(request, function (result, status) {
+    directionsService.route(request, function(result, status) {
         if (status == 'OK') {
-            directionsRenderer.setDirections({routes: []});
+            directionsRenderer.setDirections({ routes: [] });
 
             var rendererOptions = {
                 map: map,

@@ -7,8 +7,8 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>RouteSync</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet"/>
-    <link href="main.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,1,200"
           rel="stylesheet"/>
 </head>
@@ -42,41 +42,6 @@
         </div>
     </div>
 </nav>
-
-<script>
-    // Get the profile container element
-    const profileContainer = document.querySelector('.profile-container');
-
-    // Add an event listener for the click event on the profile container
-    profileContainer.addEventListener('click', () => {
-        // Get the current login status
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-
-        // If the user is logged in, log them out
-        if (isLoggedIn) {
-            localStorage.removeItem('isLoggedIn');
-            window.location.reload();
-        } 
-        // If the user is not logged in, log them in
-        else {
-            // Get the username and password from the login form
-            const username = document.querySelector('#username').value;
-            const password = document.querySelector('#password').value;
-
-            // Check if the username and password are correct
-            if (username === 'admin' && password === 'password') {
-                // Set the isLoggedIn flag in local storage
-                localStorage.setItem('isLoggedIn', true);
-
-                // Reload the page to update the UI
-                window.location.reload();
-            } else {
-                // Display an error message
-                alert('Invalid username or password');
-            }
-        }
-    });
-</script>
 
 <div class="panel" style="z-index: 100;">
     <div class="route-panel">
@@ -219,12 +184,11 @@
 </div>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=[API_KEy_HERE]&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbguvtFyOsyb1gauZHSTM6ZfA77PlE5yg&libraries=places"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="MainComponentAnimation.js"></script>
 <div id="map"></div>
-<script src="map.js">
-</script>
+<script src="/map2.js"></script>
 </body>
 </html>
 
