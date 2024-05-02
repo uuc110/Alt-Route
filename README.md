@@ -1,4 +1,4 @@
-# AltRoute: Finding Safer Routes Beyond Google Maps
+# Experience Seamless Commuting with RouteSync: Your Bus, On Time, Every Time
 
 AltRoute is a web application developed during a hackathon to address the challenge of finding safer routes that are not typically shown on Google Maps. The idea behind this project is to provide an alternative routing system that considers factors such as time of day and potential risks, offering routes that may be safer than the ones suggested by traditional navigation apps.
 
@@ -15,8 +15,8 @@ The problem statement for this hackathon project was to create a solution that c
 
 ## Technologies Used
 
-- **Front-end**: HTML, CSS, JavaScript
-- **Back-end**: (If applicable, mention the server-side technologies used)
+- **Front-end**: HTML, CSS, JavaScript, EJS
+- **Back-end**: Express, MongoDB, NodeJS
 - **APIs**: Google Maps API
 
 ## Getting Started
@@ -25,6 +25,7 @@ To run the AltRoute application locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/AltRoute.git`
 2. Navigate to the project directory: `cd AltRoute`
-3. Open the `index.html` file in a web browser.
+3. Install the module required and dependency using `npm install -r requirement`
+4. Then run the server by using the command `nodemon src/index.js`
 
 Note: You may need to obtain API keys for certain services (e.g., Google Maps) and configure them in the project files.
