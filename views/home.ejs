@@ -46,30 +46,30 @@
 <div class="panel" style="z-index: 100;">
     <div class="route-panel">
         <div class="heading">
-            <span>Delivery Tracking</span>
+            <span>Route Tracking</span>
         </div>
         <div class="driver-details">
             <div class="driver-user" id="collasped">
                 <div class="driver-box">
-                    <span class="location">Package from Warsaw</span>
-                    <span class="order-id">Order ID #14398-91751</span>
+                    <span class="location">G-3 : Kalani Nagar</span>
+                    <span class="order-id">Jitendra Rathor</span>
                 </div>
                 <div class="status-of-user">
                     <a href="#">on the way</a>
                 </div>
-                <span class="time">17:45 AM, Tuesday</span>
+                <span class="time">9:35 AM, Thursday</span>
             </div>
 
             <div class="driver-user-BIG">
                 <div class="shot-info">
                     <div class="driver-box">
-                        <span class="location">Package from Warsaw</span>
-                        <span class="order-id">Order ID #14398-91751</span>
+                        <span class="location">G-10 : Vijay Nagar</span>
+                        <span class="order-id">Ragav Jain</span>
                     </div>
                     <div class="status-of-user">
                         <a href="#">on the way</a>
                     </div>
-                    <span class="time">17:45 AM, Tuesday</span>
+                    <span class="time">9:55 AM, Thursday</span>
                 </div>
                 <div class="driver-detail-expanded">
                     <div class="progress">
@@ -79,15 +79,15 @@
                         </div>
                     </div>
                     <div class="user-pro-detail">
-                        <div class="flex-in customer-name">Customer<span>Castorama</span></div>
-                        <div class="flex-in weight">Weight <span>2.8kg</span></div>
-                        <div class="flex-in price">Price <span>$480</span></div>
-                        <div class="flex-in departure">Departure <span>22 July</span></div>
+                        <div class="flex-in customer-name">Association<span>AITR</span></div>
+                        <div class="flex-in weight">Total Stop<span>7</span></div>
+                        <div class="flex-in price">Routes<span>3</span></div>
+                        <div class="flex-in departure">Last Stop<span>9:45 AM</span></div>
                     </div>
                     <div class="user-info-2">
-                        <img alt="#" class="driver-pic" src="assets/image/hannah.jpg">
+                        <img alt="#" class="driver-pic" src="assets/image/indianDriver.png">
                         <div class="driver_name-info">
-                            <p class="user-name">Adam Brady</p>
+                            <p class="user-name">Ragav Jain</p>
                             <span>Driver</span>
                         </div>
                         <div class="user-contact">
@@ -103,29 +103,29 @@
 
     <div class="tracking-card" style="z-index: 100;">
         <div class="tracking-header">
-            <span class="order-id">Order ID #14398-91751</span>
+            <span class="order-id">G-3 : Gandhi Nagar ⇆ Acropolis</span>
             <span class="status on-the-way">on the way</span>
         </div>
         <div class="tracking-details">
             <div class="detail">
                 <span class="label">From</span>
-                <span class="value">Warsaw, PL</span>
+                <span class="value">Gandhi Nagar, IN</span>
             </div>
             <div class="detail">
                 <span class="label">To</span>
-                <span class="value">Berlin, DE</span>
+                <span class="value">AITR, IN</span>
             </div>
             <div class="detail">
                 <span class="label">Current Location</span>
-                <span class="value">Dresden, DE</span>
+                <span class="value">Bada Ganpati, IN</span>
             </div>
             <div class="detail">
                 <span class="label">Kms Left</span>
-                <span class="value">620</span>
+                <span class="value">18</span>
             </div>
             <div class="detail">
                 <span class="label">Last Stop</span>
-                <span class="value">3 hours</span>
+                <span class="value">10 Min Ago</span>
             </div>
         </div>
     </div>
@@ -148,10 +148,10 @@
     </div>
 </div>
 
+<div id="add-route">Add</div>
 <div class="feedback_button">
     <button id="feedbackButton">?</button>
 </div>
-
 <div class="feedback" id="feedbackPopup">
     <div class="info_user">
         <div class="INFO">
@@ -169,8 +169,8 @@
     </div>
     <div class="feedback_description">
         <p>Please provide your feedback:</p>
-
     </div>
+
     <div class="textfeedback">
         <textarea class="textarea-feedback" cols="30" id="feedback-text" name="feedback" rows="10"></textarea>
         <div class="loaded-cordinate">
@@ -188,7 +188,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="MainComponentAnimation.js"></script>
 <div id="map"></div>
-<script src="/map2.js"></script>
+<script src="/map.js"></script>
+<script src="/map2-withrouteAdd.js"></script>
+<!-- <script src="/ArivingNotificatoin.js"></script> -->
+<script src="/generateElement.js"></script>
 </body>
 </html>
 

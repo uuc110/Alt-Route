@@ -20,6 +20,7 @@ const StudentSchema = new mongoose.Schema({
             type: String,
             required: true
         },
+
         phoneNumber: {
             type: String,
             required: true
@@ -84,80 +85,94 @@ const StudentSchema = new mongoose.Schema({
     // Add more fields as needed for additional steps
 });
 
-// const DriverSchema = new mongoose.Schema({
-//     personalInformation: {
-//         firstName: {
-//             type: String,
-//             required: true
-//         },
-//         lastName: {
-//             type: String,
-//             required: true
-//         },
-//         phoneNumber: {
-//             type: String,
-//             required: true
-//         },
-//         emailAddress: {
-//             type: String,
-//             required: true
-//         }
-//     },
-//     organisationInformation: {
-//         employeeId: {
-//             type: String,
-//             required: true
-//         },
-//         organisation: {
-//             type: String,
-//             required: true
-//         },
-//         organisationEmail: {
-//             type: String,
-//             required: true
-//         }
-//     },
-//     vehicleInformation: {
-//         busNumber: {
-//             type: String,
-//             required: true
-//         },
-//         busModel: {
-//             type: String,
-//             required: true
-//         },
-//         busRoute: {
-//             type: String,
-//             required: true
-//         },
-//         busCapacity: {
-//             type: Number,
-//             required: true
-//         },
-//         numberOfFaculty: {
-//             type: Number,
-//             required: true
-//         },
-//         numberOfStudents: {
-//             type: Number,
-//             required: true
-//         },
-//         stopDetails: {
-//             type: String,
-//             required: true
-//         },
-//         alternateDriver: {
-//             type: String,
-//             required: true
-//         }
-//     },
-//     // Add more fields as needed for additional steps
-// });
+const DriverSchema = new mongoose.Schema({
+    driverPersonalInformation: {
+        firstName: {
+            type: String,
+            required: true
+        },
+        lastName: {
+            type: String,
+            required: true
+        },
+        phoneNumber: {
+            type: String,
+            required: true
+        },
+        emailAddress: {
+            type: String,
+            required: true
+        }
+    },
+    driverOrganisationInformation: {
+        employeeId: {
+            type: String,
+            required: true
+        },
+        organisation: {
+            type: String,
+            required: true
+        },
+        organisationEmail: {
+            type: String,
+            required: true
+        }
+    },
+    driverVehicleInformation: {
+        busNumber: {
+            type: String,
+            required: true
+        },
+        busModel: {
+            type: String,
+            required: true
+        },
+        busRoute: {
+            type: String,
+            required: true
+        },
+        busCapacity: {
+            type: Number,
+            required: true
+        },
+        numberOfFaculty: {
+            type: Number,
+            required: true
+        },
+        numberOfStudents: {
+            type: Number,
+            required: true
+        },
+        stopDetails: {
+            type: String,
+            required: true
+        },
+        alternateDriver: {
+            type: String,
+            required: true
+        }
+    }
+});
+
+const driverRouteSchema = new mongoose.Schema({
+    driverId: String,
+    origin: {
+        lat: Number,
+        lng: Number
+    },
+    destination: {
+        lat: Number,
+        lng: Number
+    },
+    routeCoordinates: Array
+});
+
+
 
 const Student = new mongoose.model('Student', StudentSchema);
-// const Driver = mongoose.model('Driver', DriverSchema);
-
+const Driver = mongoose.model('Driver', DriverSchema);
+const DriverRoutes = mongoose.model('DriverRoutes', driverRouteSchema);
 // Export the model
-module.exports = {Student, /* Driver */};
+module.exports = {Student, Driver, DriverRoutes};
 
 

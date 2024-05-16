@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+html {
+    /*font-size: 10px;*/
+    /*10px /16px = 0.625 = 62.5%*/
+    /*Percentage of user's browser font-size setting*/
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-color: #282828; */
+    background-color: black;
+    font-family: "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 100px;
+    font-size: 2rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo a{
+    text-decoration: none;
+    font-size: 4rem;
+    font-family: "Anurati", sans-serif;
+    letter-spacing: 2.4px;
+    color: red;
+    
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 30px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #ff0000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* .contact-info {
+    font-size: 18px;
+  } */
+
+.phone {
+    color: #ff0000;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    border: 3px solid red;
+    width: 200px;
+    height: 50px;
+    margin-right: 60px;
+}
+
+.phone-number {
+    color: red;
+    font-weight: bold;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-bottom: 14.4rem;
+    margin-top: 4.8rem;
+    border-radius: 25% 0% 70% 0% / 0% 12% 60% 25%;
+}
+
+.content {
+    flex: 1;
+    padding-right: 20px;
+    color: white;
+   
+}
+
+.travel{
+    color: #cccccc;
+}
+
+h1 {
+    font-size: 6.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-bottom: 3.4rem;
+}
+
+.buttons {
+    display: flex;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.apply-btn {
+    background-color: #ff3333;
+    color: #fff;
+}
+
+.trial-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #ff3333;
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden; /* Ensures the curved background doesn't overflow */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0% 100% 70% 30% / 97% 48% 52% 3%;
+    border: 2px solid #261d1d;
+}
+
+.curve {
+    position: absolute;
+    
+    right: 100%;
+    width: 10%;
+    height: 15px;
+    background-color: ;
+    border-radius: 30% 70% 14% 86% / 79% 43% 57% 21%;
+}
+
+.travel {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+}
+
+.enhanced-travel-experience {
+    background-color: #480707;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.travel {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.travel h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.travel p {
+    font-size: 1.2rem;
+    color: #666;
+    padding-bottom: 4px;
+}
+
+.travel h1,
+.travel p {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+.box {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.text {
+    padding: auto;
+    /* background: #fff; */
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #af5413;
+    border: 0px solid white;
+}
+
+.left-box {
+    left: 0;
+}
+
+.right-box {
+    left: 50%;
+}
+
+.img-2 {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+
+.right-box img {
+    left: -20px;
+}
+
+.timeline::after {
+    content: " ";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #fff !important;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    animation: moveline 6s linear forwards;
+    z-index: -1;
+}
+
+.timeline h2 {
+    color: #a35d2b;
+}
+
+@keyframes moveline {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+.text h2 {
+    font-weight: 600;
+}
+
+.text small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-box-arrow {
+    height: 0;
+    position: absolute;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    right: -15px;
+}
+
+.right-box-arrow {
+    height: 0;
+    position: absolute;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+    left: -15px;
+}
+
+.box:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.box:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.box:nth-child(4) {
+    animation-delay: 5s;
+}
+
+.box:nth-child(5) {
+    animation-delay: 6s;
+}
+
+/* Footer Container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #261d1d;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.made-by {
+    font-size: 1.7rem;
+    color: #fff;
+    margin-top: 3rem;
+}
+
+.fa-solid fa-phone {
+    width: 50px;
+    height: 100px;
+}
+
+/* My CSS */
+
+.loginButton {
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #ff0000;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loginButton::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: black;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+.loginButton::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: black;
+    transition: 0.5s;
+}
+
+.loginButton:hover::before,
+.loginButton:hover::after {
+    transform: scale(0);
+}
+
+.loginButton:hover {
+    box-shadow: inset 0px 0px 25px #b41212;
+}

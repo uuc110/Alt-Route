@@ -46,11 +46,12 @@ document.querySelectorAll('input[name="user-role"]').forEach(function(radio) {
 
 next_click.forEach(function(next_click_form) {
     next_click_form.addEventListener('click', function() {
-        if (!validateform()) {
+        formnumber++; // Increment the form number first
+        updateform(); // Update the form to show the next section
+        if (!validateform()) { // Validate the form after making the section visible
+            formnumber--; // If validation fails, decrement the form number
             return false;
         }
-        formnumber++;
-        updateform();
         progress_forward();
         contentchange();
     });
@@ -90,10 +91,20 @@ share.addEventListener('click', function() {
 });
 
 function updateform() {
-    main_form.forEach(function(mainform_number) {
-        mainform_number.classList.remove('active');
-    });
-    main_form[formnumber].classList.add('active');
+    const studentForms = document.querySelectorAll('.container:not(.driver-signup) .main');
+    const driverForms = document.querySelectorAll('.container.driver-signup .main');
+
+    // Remove the 'active' class from all forms
+    studentForms.forEach(form => form.classList.remove('active'));
+    driverForms.forEach(form => form.classList.remove('active'));
+
+    if (isStudent) {
+        // If the user is a student, show the corresponding form section
+        studentForms[formnumber].classList.add('active');
+    } else {
+        // If the user is a driver, show the corresponding form section
+        driverForms[formnumber].classList.add('active');
+    }
 }
 
 function progress_forward() {
@@ -119,18 +130,28 @@ function contentchange() {
 
 function validateform() {
     let validate = true;
-    var validate_inputs = document.querySelectorAll(".active-form .main.active input");
-    validate_inputs.forEach(function(vaildate_input) {
-        vaildate_input.classList.remove('warning');
-        if (vaildate_input.hasAttribute('required')) {
-            if (vaildate_input.value.length === 0) {
-                validate = false;
-                vaildate_input.classList.add('warning');
-            } else {
-                vaildate_input.setCustomValidity('');
-            }
+    let validateInputs;
+
+    if (isStudent) {
+        // Target the student form inputs
+        const studentForm = document.querySelector('.container:not(.driver-signup) .main.active');
+        validateInputs = studentForm.querySelectorAll('input[required]');
+    } else {
+        // Target the driver form inputs
+        const driverForm = document.querySelector('.container.driver-signup .main.active');
+        validateInputs = driverForm.querySelectorAll('input[required]');
+    }
+
+    validateInputs.forEach(function(validateInput) {
+        validateInput.classList.remove('warning');
+        if (validateInput.value.length === 0) {
+            validate = false;
+            validateInput.classList.add('warning');
+        } else {
+            validateInput.setCustomValidity('');
         }
     });
+
     return validate;
 }
 

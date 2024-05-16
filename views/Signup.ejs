@@ -35,7 +35,8 @@
                 </ul>
             </div>
             <div class="right-side">
-                    <form action="/signup" method="post">
+                <form action="/signup" method="post">
+                    <input type="hidden" name="userType" value="student">
                     <div class="main active">
                         <div class="text">
                             <h2>Your Personal Information</h2>
@@ -43,27 +44,32 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input id="user_name" name="personalInformation.firstName" required type="text" alt="username of user">
+                                <input id="user_name" name="personalInformation.firstName" required type="text"
+                                       alt="username of user">
                                 <span>First Name</span>
                             </div>
                             <div class="input-div">
-                                <input required type="text" name="personalInformation.lastName" alt="last name of student">
+                                <input required type="text" name="personalInformation.lastName"
+                                       alt="last name of student">
                                 <span>Last Name</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="personalInformation.phoneNumber" alt="phone number of student">
+                                <input required type="text" name="personalInformation.phoneNumber"
+                                       alt="phone number of student">
                                 <span>Phone Number</span>
                             </div>
                             <div class="input-div input">
-                                <input required type="email" name="personalInformation.emailAddress"  alt="email of student">
+                                <input required type="email" name="personalInformation.emailAddress"
+                                       alt="email of student">
                                 <span>Email Address</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="email" name="personalInformation.studentOrg" alt="org mail of student">
+                                <input required type="email" name="personalInformation.studentOrg"
+                                       alt="org mail of student">
                                 <span>Organisation Email</span>
                             </div>
                         </div>
@@ -88,7 +94,8 @@
                                 </select>
                             </div>
                             <div class="input-div">
-                                <input name="personalInformation.pincode" id="pincode" required type="text" alt="pincode of student">
+                                <input name="personalInformation.pincode" id="pincode" required type="text"
+                                       alt="pincode of student">
                                 <span>Pincode</span>
                             </div>
                         </div>
@@ -197,7 +204,7 @@
                             <p><span class="shown_name"></span> your information has been submitted successfully.</p>
                         </div>
                     </div>
-                </div>
+            </div>
             </form>
         </div>
     </div>
@@ -233,6 +240,7 @@
             </div>
             <div class="right-side">
                 <form action="/signup" method="post">
+                    <input type="hidden" name="userType" value="driver">
                     <div class="main active">
                         <div class="text">
                             <h2>Your Personal Information</h2>
@@ -240,21 +248,25 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="personalInformation.firstName" alt="user name of driver">
+                                <input required type="text" name="driverPersonalInformation.firstName"
+                                       alt="user name of driver">
                                 <span>First Name</span>
                             </div>
                             <div class="input-div">
-                                <input required type="text" name="personalInformation.lastName" alt="last name of driver">
+                                <input required type="text" name="driverPersonalInformation.lastName"
+                                       alt="last name of driver">
                                 <span>Last Name</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="personalInformation.phoneNumber" alt="phone of driver">
+                                <input required type="text" name="driverPersonalInformation.phoneNumber"
+                                       alt="phone of driver">
                                 <span>Phone Number</span>
                             </div>
                             <div class="input-div">
-                                <input required type="email" name="personalInformation.emailAddress" alt="mail of driver">
+                                <input required type="email" name="driverPersonalInformation.emailAddress"
+                                       alt="mail of driver">
                                 <span>Email Address</span>
                             </div>
                         </div>
@@ -269,17 +281,17 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="organisationInformation.employeeId">
+                                <input required type="text" name="driverOrganisationInformation.employeeId">
                                 <span>Employee ID</span>
                             </div>
                             <div class="input-div">
-                                <input required type="text" name="organisationInformation.organisation">
+                                <input required type="text" name="driverOrganisationInformation.organisation">
                                 <span>Organisation</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="email" name="organisationInformation.organisationEmail">
+                                <input type="email" name="driverOrganisationInformation.organisationEmail">
                                 <span>Organisation Email</span>
                             </div>
                         </div>
@@ -295,41 +307,41 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="vehicleInformation.busNumber">
+                                <input required type="text" name="driverVehicleInformation.busNumber">
                                 <span>Bus Number</span>
                             </div>
                             <div class="input-div">
-                                <input required type="text" name="vehicleInformation.busModel">
+                                <input required type="text" name="driverVehicleInformation.busModel">
                                 <span>Bus Model</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="vehicleInformation.busRoute">
+                                <input required type="text" name="driverVehicleInformation.busRoute">
                                 <span>Bus Route</span>
                             </div>
                             <div class="input-div">
-                                <input required type="number" name="vehicleInformation.busCapacity">
+                                <input required type="number" name="driverVehicleInformation.busCapacity">
                                 <span>Bus Capacity</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="number" name="vehicleInformation.numberOfFaculty">
+                                <input required type="number" name="driverVehicleInformation.numberOfFaculty">
                                 <span>Number of Faculty</span>
                             </div>
                             <div class="input-div">
-                                <input required type="number" name="vehicleInformation.numberOfStudents">
+                                <input required type="number" name="driverVehicleInformation.numberOfStudents">
                                 <span>Number of Students</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input required type="text" name="vehicleInformation.stopDetails">
+                                <input required type="text" name="driverVehicleInformation.stopDetails">
                                 <span>Stop Details</span>
                             </div>
                             <div class="input-div">
-                                <input required type="text" name="vehicleInformation.alternateDriver">
+                                <input required type="text" name="driverVehicleInformation.alternateDriver">
                                 <span>Alternate Driver</span>
                             </div>
                         </div>
@@ -356,7 +368,7 @@
                                 <h3>Peter Hawkins</h3>
                                 <div class="detail">
                                     <p><a href="#">Izmar, Turkey</a> Hiring</p>
-                                    <p>17 last day . 94 Apply</p>
+                                    <p>17 last day. 94 Apply</p>
                                 </div>
                             </div>
                         </div>
@@ -365,11 +377,22 @@
                             <button type="submit" class="submit_button">Submit</button>
                         </div>
                     </div>
+                    <div class="main">
+                        <svg class="checkmark" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="checkmark__circle" cx="26" cy="26" fill="none" r="25"/>
+                            <path class="checkmark__check" d="M14.1 27.2l7.1 7.2 16.7-16.8" fill="none"/>
+                        </svg>
+                        <div class="text congrats">
+                            <h2>Congratulations!</h2>
+                            <p><span class="shown_name"></span> your information has been submitted successfully.</p>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 
 <script src="/Signup.js"></script>
 </body>
